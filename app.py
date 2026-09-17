@@ -326,9 +326,9 @@ st.sidebar.caption(
 )
 st.sidebar.markdown("---")
 st.sidebar.caption(
-    "Sample: arms-length sales from Jan 1, 2013 onward, property class 210 or 215. "
+    "Sample: Includes all single-family arms-length sales from Jan 1, 2013 onward. "
     "Prices are inflation-adjusted to 2026 dollars (CPI). By default, records flagged "
-    "outlier_flag = True are excluded. Box plots show the median (center line), "
+    "as statistical outliers are excluded. Box plots show the median (center line), "
     "25th–75th percentile range (box), and whiskers; the red line/points show the mean. "
     "Years with no recorded sales for a municipality are omitted, and YoY change is "
     "measured against the most recent prior year with data. Each table's \"Total\" row "
@@ -341,7 +341,7 @@ st.sidebar.caption(
 # 7. Compute + render
 # -----------------------------------------------------------------------------
 
-st.title("Cattaraugus County Sales Explorer — Class 210 / 215")
+st.title("Cattaraugus County Single-Family Arm's Length Sales")
 
 fs = get_filtered_sales(sales, outliers, year2026)
 fs_price = fs[fs["sale_price_2026usd"].notna()]
